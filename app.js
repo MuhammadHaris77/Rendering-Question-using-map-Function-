@@ -512,11 +512,12 @@ var counter = 0;
     const showData = document.querySelector('#div');
     fetch('https://jsonplaceholder.typicode.com/todos/')
           .then(response => response.json())
+     //   .then((res)=>{console.log (res)})
           .then(  (res) =>
            res.map((item)=>{
            showData.innerHTML = `
            <h3 class="text-danger  fs-1">QUESTION</h3>
-          <p class="fs-1">${`Q : ` + res[counter].title}</p>
+          <p class="fs-1">${`${counter}) Q : ` + res[counter-1].title}</p>
            <button class="btn btn-success px-5" onclick="Nextbtn()"><b>NEXT</b</button>`
                })
         )
